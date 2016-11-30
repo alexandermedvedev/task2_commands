@@ -12,5 +12,5 @@ git push origin master
 cd ..
 cd firstRepo
 git filter-branch --prune-empty --tree-filter 'rm -rf frontik/testing' HEAD
-git remote add origin https://github.com/alexandermedvedev/task2_2.git
+git remote add origin https://github.com/alexandermedvedev/task2_1.git
 git push origin master
