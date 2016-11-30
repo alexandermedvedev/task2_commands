@@ -1,0 +1,16 @@
+git clone https://github.com/hhru/frontik firstRepo
+cd firstRepo
+git remote rm origin
+git subtree split --prefix=frontik/testing/ --branch=secondRepo
+cd ..
+mkdir secondRepo
+cd secondRepo
+git init
+git pull ../firstRepo secondRepo
+git remote add origin https://github.com/alexandermedvedev/task2_2.git
+git push origin master
+cd ..
+cd firstRepo
+git filter-branch --prune-empty --tree-filter 'rm -rf frontik/testing' HEAD
+git remote add origin https://github.com/alexandermedvedev/task2_2.git
+git push origin master
